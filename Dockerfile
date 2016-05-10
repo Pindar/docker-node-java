@@ -1,4 +1,7 @@
-FROM alpine:3.3
+FROM ubuntu
 MAINTAINER Simon Dittlmann
 
-RUN apk --update add openjdk7-jre nodejs git
+RUN apt-get update && \
+  apt-get install -y curl git openjdk-8-jre && \
+  curl -sL https://deb.nodesource.com/setup_0.10 | bash -  && \
+  apt-get install -y nodejs
